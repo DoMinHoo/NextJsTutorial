@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { ErrorWrapper } from "./error-wrapper";
 
 export const metadata: Metadata = {
     title: {
@@ -48,7 +49,9 @@ export default function CustomerLayout({
 
                 {/* Body */}
                 <main style={{ flex: 1, padding: 32 }}>
-                    {children}
+                    <ErrorWrapper>
+                        {children}
+                    </ErrorWrapper>
                 </main>
 
                 {/* Footer */}
